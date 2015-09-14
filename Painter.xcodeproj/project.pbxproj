@@ -23,6 +23,7 @@
 		2BD0215E1BA42599005CD013 /* PaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0215D1BA42599005CD013 /* PaletteView.m */; };
 		2BD021611BA425CF005CD013 /* PenPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021601BA425CF005CD013 /* PenPickerView.m */; };
 		2BD021641BA5409D005CD013 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021631BA5409D005CD013 /* Line.m */; };
+		2BD021661BA6BB9D005CD013 /* palette.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD021651BA6BB9D005CD013 /* palette.png */; };
 		EF846BCC63B84E5EB5138C40 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78024BA525E2C4183494D2A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		2BD021601BA425CF005CD013 /* PenPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenPickerView.m; sourceTree = "<group>"; };
 		2BD021621BA5409D005CD013 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		2BD021631BA5409D005CD013 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		2BD021651BA6BB9D005CD013 /* palette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = palette.png; path = Painter/palette.png; sourceTree = "<group>"; };
 		5441D80C25C3CEE9B4BBCF1D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CB05997F4B8C154503AF5296 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D78024BA525E2C4183494D2A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 				2B54F5EC1B9A926E00A92270 /* Main.storyboard */,
 				2B54F5EF1B9A926E00A92270 /* Images.xcassets */,
 				2B54F5F11B9A926E00A92270 /* LaunchScreen.xib */,
+				2BD021671BA6BBAA005CD013 /* Resources */,
 				2B54F5E21B9A926E00A92270 /* Supporting Files */,
 			);
 			path = Painter;
@@ -165,6 +168,15 @@
 				2B54F5FD1B9A926E00A92270 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BD021671BA6BBAA005CD013 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2BD021651BA6BB9D005CD013 /* palette.png */,
+			);
+			name = Resources;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		56C23677D885F585C4E53AF0 /* Pods */ = {
@@ -268,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD021661BA6BB9D005CD013 /* palette.png in Resources */,
 				2B54F5EE1B9A926E00A92270 /* Main.storyboard in Resources */,
 				2B54F5F31B9A926E00A92270 /* LaunchScreen.xib in Resources */,
 				2B54F5F01B9A926E00A92270 /* Images.xcassets in Resources */,
