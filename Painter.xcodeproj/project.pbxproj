@@ -14,6 +14,15 @@
 		2B54F5F01B9A926E00A92270 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B54F5EF1B9A926E00A92270 /* Images.xcassets */; };
 		2B54F5F31B9A926E00A92270 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B54F5F11B9A926E00A92270 /* LaunchScreen.xib */; };
 		2B54F5FF1B9A926E00A92270 /* PainterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F5FE1B9A926E00A92270 /* PainterTests.m */; };
+		2B54F6091B9BEE7D00A92270 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B54F6081B9BEE7D00A92270 /* QuartzCore.framework */; };
+		2B54F60B1BA1771900A92270 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B54F60A1BA1771900A92270 /* MainViewController.xib */; };
+		2B54F60E1BA17C9300A92270 /* ColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F60D1BA17C9300A92270 /* ColorPickerView.m */; };
+		2B54F6111BA19A3A00A92270 /* ColorPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */; };
+		2BD021581BA423D8005CD013 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021571BA423D8005CD013 /* MainViewController.m */; };
+		2BD0215B1BA42570005CD013 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0215A1BA42570005CD013 /* CanvasView.m */; };
+		2BD0215E1BA42599005CD013 /* PaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0215D1BA42599005CD013 /* PaletteView.m */; };
+		2BD021611BA425CF005CD013 /* PenPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021601BA425CF005CD013 /* PenPickerView.m */; };
+		2BD021641BA5409D005CD013 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021631BA5409D005CD013 /* Line.m */; };
 		EF846BCC63B84E5EB5138C40 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78024BA525E2C4183494D2A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -41,6 +50,22 @@
 		2B54F5F81B9A926E00A92270 /* PainterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PainterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B54F5FD1B9A926E00A92270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B54F5FE1B9A926E00A92270 /* PainterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PainterTests.m; sourceTree = "<group>"; };
+		2B54F6081B9BEE7D00A92270 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2B54F60A1BA1771900A92270 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		2B54F60C1BA17C9300A92270 /* ColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerView.h; sourceTree = "<group>"; };
+		2B54F60D1BA17C9300A92270 /* ColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerView.m; sourceTree = "<group>"; };
+		2B54F60F1BA19A3A00A92270 /* ColorPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerCell.h; sourceTree = "<group>"; };
+		2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerCell.m; sourceTree = "<group>"; };
+		2BD021561BA423D8005CD013 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		2BD021571BA423D8005CD013 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		2BD021591BA42570005CD013 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		2BD0215A1BA42570005CD013 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		2BD0215C1BA42599005CD013 /* PaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteView.h; sourceTree = "<group>"; };
+		2BD0215D1BA42599005CD013 /* PaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteView.m; sourceTree = "<group>"; };
+		2BD0215F1BA425CF005CD013 /* PenPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenPickerView.h; sourceTree = "<group>"; };
+		2BD021601BA425CF005CD013 /* PenPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenPickerView.m; sourceTree = "<group>"; };
+		2BD021621BA5409D005CD013 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		2BD021631BA5409D005CD013 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		5441D80C25C3CEE9B4BBCF1D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CB05997F4B8C154503AF5296 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D78024BA525E2C4183494D2A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B54F6091B9BEE7D00A92270 /* QuartzCore.framework in Frameworks */,
 				EF846BCC63B84E5EB5138C40 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +116,21 @@
 			children = (
 				2B54F5E61B9A926E00A92270 /* AppDelegate.h */,
 				2B54F5E71B9A926E00A92270 /* AppDelegate.m */,
+				2B54F60A1BA1771900A92270 /* MainViewController.xib */,
+				2BD0215C1BA42599005CD013 /* PaletteView.h */,
+				2BD0215D1BA42599005CD013 /* PaletteView.m */,
+				2BD021591BA42570005CD013 /* CanvasView.h */,
+				2BD0215A1BA42570005CD013 /* CanvasView.m */,
+				2BD021621BA5409D005CD013 /* Line.h */,
+				2BD021631BA5409D005CD013 /* Line.m */,
+				2BD021561BA423D8005CD013 /* MainViewController.h */,
+				2BD021571BA423D8005CD013 /* MainViewController.m */,
+				2BD0215F1BA425CF005CD013 /* PenPickerView.h */,
+				2BD021601BA425CF005CD013 /* PenPickerView.m */,
+				2B54F60C1BA17C9300A92270 /* ColorPickerView.h */,
+				2B54F60D1BA17C9300A92270 /* ColorPickerView.m */,
+				2B54F60F1BA19A3A00A92270 /* ColorPickerCell.h */,
+				2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */,
 				2B54F5E91B9A926E00A92270 /* ViewController.h */,
 				2B54F5EA1B9A926E00A92270 /* ViewController.m */,
 				2B54F5EC1B9A926E00A92270 /* Main.storyboard */,
@@ -138,6 +179,7 @@
 		DC75E1C890899CE3C5A43401 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B54F6081B9BEE7D00A92270 /* QuartzCore.framework */,
 				D78024BA525E2C4183494D2A /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -229,6 +271,7 @@
 				2B54F5EE1B9A926E00A92270 /* Main.storyboard in Resources */,
 				2B54F5F31B9A926E00A92270 /* LaunchScreen.xib in Resources */,
 				2B54F5F01B9A926E00A92270 /* Images.xcassets in Resources */,
+				2B54F60B1BA1771900A92270 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B54F6111BA19A3A00A92270 /* ColorPickerCell.m in Sources */,
+				2BD021611BA425CF005CD013 /* PenPickerView.m in Sources */,
+				2BD021581BA423D8005CD013 /* MainViewController.m in Sources */,
+				2BD0215E1BA42599005CD013 /* PaletteView.m in Sources */,
+				2B54F60E1BA17C9300A92270 /* ColorPickerView.m in Sources */,
+				2BD021641BA5409D005CD013 /* Line.m in Sources */,
 				2B54F5EB1B9A926E00A92270 /* ViewController.m in Sources */,
+				2BD0215B1BA42570005CD013 /* CanvasView.m in Sources */,
 				2B54F5E81B9A926E00A92270 /* AppDelegate.m in Sources */,
 				2B54F5E51B9A926E00A92270 /* main.m in Sources */,
 			);
@@ -428,6 +478,7 @@
 				INFOPLIST_FILE = Painter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -439,6 +490,7 @@
 				INFOPLIST_FILE = Painter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
