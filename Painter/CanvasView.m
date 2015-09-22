@@ -68,6 +68,7 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     //TODO: How to handle multiple touch events?
+#warning 主任，多点触摸这里touches数组会有多个值，分别处理就可以了，现在好像会乱
     for (UITouch *t in touches) {
         [self.currentLine setColor:_drawColor];
         CGPoint loc = [t locationInView:self];
