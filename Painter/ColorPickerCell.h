@@ -10,4 +10,6 @@
 
 @interface ColorPickerCell : UICollectionViewCell
 
+- (void)setColor:(UIColor*)color;
+
 @end

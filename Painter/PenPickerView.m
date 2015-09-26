@@ -7,15 +7,51 @@
 //
 
 #import "PenPickerView.h"
+#import "PenPickerCell.h"
+#import "PenManager.h"
 
 @implementation PenPickerView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+static NSString* CELL_ID = @"PEN_PICKER";
+
+- (id)initWithCoder:(NSCoder *)c
+{
+    self = [super initWithCoder:c];
+    if (self) {
+        [self internalInitialize];
+    }
+    return self;
 }
-*/
+
+- (void)internalInitialize
+{
+    self.dataSource = self;
+    self.delegate = self;
+    [self registerClass:[PenPickerCell class] forCellWithReuseIdentifier:CELL_ID];
+}
+
+#pragma mark - UICollectionViewDataSource
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [[PenManager instance].pens count];
+}
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PenPickerCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[PenPickerCell alloc] init];
+    }
+    [cell setPen:[[PenManager instance].pens objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PenPickerCell *cell = (PenPickerCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    if (cell) {
+        [_pickDelegate penSelected:[[PenManager instance].pens objectAtIndex:indexPath.row]];
+    }
+}
 
 @end

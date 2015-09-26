@@ -27,14 +27,14 @@ static NSArray* COLORS = nil;
     }
     return self;
 }
-- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout // the designated initializer
-{
-    self = [super initWithFrame:frame collectionViewLayout:layout];
-    if (self) {
-        [self internalInitialize];
-    }
-    return self;
-}
+//- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout // the designated initializer
+//{
+//    self = [super initWithFrame:frame collectionViewLayout:layout];
+//    if (self) {
+//        [self internalInitialize];
+//    }
+//    return self;
+//}
 - (void)internalInitialize
 {
     if (!COLORS) {
@@ -48,15 +48,17 @@ static NSArray* COLORS = nil;
 #pragma mark - UICollectionViewDataSource
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6;
+    return [COLORS count];
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ColorPickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
     if (!cell) {
         cell = [[ColorPickerCell alloc] init];
+        cell.layer.borderWidth = 1;
+        cell.layer.borderColor = [[UIColor blackColor] CGColor];
     }
-    cell.contentView.backgroundColor = COLORS[indexPath.row];
+    [cell setColor:COLORS[indexPath.row] ];
     return cell;
 }
 
@@ -68,13 +70,5 @@ static NSArray* COLORS = nil;
         [_pickDelegate colorSelected:cell.contentView.backgroundColor];
     }
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

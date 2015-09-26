@@ -10,4 +10,19 @@
 
 @implementation ColorPickerCell
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = [[UIColor blackColor] CGColor];
+    }
+    return self;
+}
+
+- (void)setColor:(UIColor*)color
+{
+    self.contentView.backgroundColor = color;
+}
+
 @end

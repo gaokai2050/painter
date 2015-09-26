@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SketchPad.h"
 #import "ColorPickerView.h"
 #import "PaletteView.h"
 #import "PenPickerView.h"
@@ -14,7 +15,7 @@
 
 @interface MainViewController : UIViewController <ColorPickerDelegate>
 
-@property (strong, nonatomic) UIColor *userPickedColor;
+@property (strong, nonatomic) SketchPad *pad;
 
 @property (weak, nonatomic) IBOutlet CanvasView *canvas;
 @property (weak, nonatomic) IBOutlet ColorPickerView *colorPicker;

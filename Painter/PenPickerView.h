@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PenRef.h"
 
-@interface PenPickerView : UICollectionView
+@protocol PenPickerDelegate <NSObject>
+@optional
+- (void)penSelected:(PenRef *)pen;
+@end
+
+@interface PenPickerView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (nonatomic,retain) id <PenPickerDelegate> pickDelegate;
 
 @end
