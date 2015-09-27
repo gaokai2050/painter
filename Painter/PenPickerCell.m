@@ -18,9 +18,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundView.backgroundColor = [UIColor blackColor];
-        self.contentView.backgroundColor = [UIColor redColor];
-        _image = [[UIImageView alloc] initWithFrame:frame];
+//        self.backgroundView.backgroundColor = [UIColor blackColor];
+        self.contentView.backgroundColor = [UIColor brownColor];
+        CGRect imageRect = CGRectMake(0, 0, frame.size.width, frame.size.height);
+        _image = [[UIImageView alloc] initWithFrame:imageRect];
+        
         if (_image) {
             [self.contentView addSubview:_image];
         } else {
@@ -35,8 +37,9 @@
 {
     _pen = pen;
     _image.image = _pen ? _pen.image : nil;
+    
     [self setNeedsLayout];
-    [self setNeedsDisplay];
+//    [self setNeedsDisplay];
 }
 
 @end
