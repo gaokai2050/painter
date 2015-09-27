@@ -34,7 +34,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bF2-UQ-dCi" customClass="PenPickerView">
-                    <rect key="frame" x="0.0" y="652" width="320" height="116"/>
+                    <rect key="frame" x="0.0" y="652" width="360" height="116"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="zkI-7v-uaH">
                         <size key="itemSize" width="100" height="116"/>

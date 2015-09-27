@@ -14,8 +14,6 @@
 //  It is a method of UIView called every time the screen needs a redisplay or refresh.
 - (void)drawRect:(CGRect)rect
 {
-    NSLog(@"%@ (%.2f,%.2f)-(%.2f,%.2f)", @"CanvasView.drawRect", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSetLineWidth(context, 5.0);

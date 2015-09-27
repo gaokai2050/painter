@@ -18,9 +18,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundView.backgroundColor = [UIColor blackColor];
-        self.contentView.backgroundColor = [UIColor redColor];
-        _image = [[UIImageView alloc] initWithFrame:frame];
+        _image = [[UIImageView alloc] initWithFrame:self.frame];
         if (_image) {
             [self.contentView addSubview:_image];
         } else {
@@ -34,9 +32,10 @@
 - (void)setPen:(PenRef*)pen
 {
     _pen = pen;
+    if (!(_pen && _pen.image)) {
+        NSLog(@"[WARNING] Pen or Pen's image is nil");
+    }
     _image.image = _pen ? _pen.image : nil;
-    [self setNeedsLayout];
-    [self setNeedsDisplay];
 }
 
 @end

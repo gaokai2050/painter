@@ -53,11 +53,6 @@ static NSArray* COLORS = nil;
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ColorPickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[ColorPickerCell alloc] init];
-        cell.layer.borderWidth = 1;
-        cell.layer.borderColor = [[UIColor blackColor] CGColor];
-    }
     [cell setColor:COLORS[indexPath.row] ];
     return cell;
 }

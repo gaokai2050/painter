@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3E82691BB6DE0500888970 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E82681BB6DE0500888970 /* Common.m */; settings = {ASSET_TAGS = (); }; };
 		2B54F5E51B9A926E00A92270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F5E41B9A926E00A92270 /* main.m */; };
 		2B54F5E81B9A926E00A92270 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F5E71B9A926E00A92270 /* AppDelegate.m */; };
 		2B54F5EB1B9A926E00A92270 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F5EA1B9A926E00A92270 /* ViewController.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B3E82671BB6DE0500888970 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		2B3E82681BB6DE0500888970 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		2B54F5DF1B9A926E00A92270 /* Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Painter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B54F5E31B9A926E00A92270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B54F5E41B9A926E00A92270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				2B54F5E21B9A926E00A92270 /* Supporting Files */,
 				2BD021781BB13E58005CD013 /* SketchPad.h */,
 				2BD021791BB13E58005CD013 /* SketchPad.m */,
+				2B3E82671BB6DE0500888970 /* Common.h */,
+				2B3E82681BB6DE0500888970 /* Common.m */,
 			);
 			path = Painter;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 				2BD0217A1BB13E58005CD013 /* SketchPad.m in Sources */,
 				2BD0215B1BA42570005CD013 /* CanvasView.m in Sources */,
 				2B54F5E81B9A926E00A92270 /* AppDelegate.m in Sources */,
+				2B3E82691BB6DE0500888970 /* Common.m in Sources */,
 				2BD021771BB1312F005CD013 /* PenManager.m in Sources */,
 				2B54F5E51B9A926E00A92270 /* main.m in Sources */,
 			);

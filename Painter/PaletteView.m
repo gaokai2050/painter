@@ -48,14 +48,14 @@
 // An empty implementation adversely affects performance during animation.
  */
 - (void)drawRect:(CGRect)rect {
-    NSLog(@"%@ (%.2f,%.2f)-(%.2f,%.2f)", @"PaletteView.drawRect", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+//    NSLog(@"%@ (%.2f,%.2f)-(%.2f,%.2f)", @"PaletteView.drawRect", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextDrawImage(context, rect, self.backgroundImage);
     
     CGRect drawRect = CGRectMake(20, 20, 100, 100);
 //    CGRect drawRect2 = CGRectMake(30, 30, 90, 90);
-    CGRect drawRect2 = CGRectMake(30, 30, 100, 100);
+    CGRect drawRect2 = CGRectMake(30, 30, 60, 60);
 //    CGContextBeginTransparencyLayerWithRect(context, drawRect, NULL);
     if (_userPickedColor) {
         CGFloat bgRed, bgGreen, bgBlue, bgAlpha;

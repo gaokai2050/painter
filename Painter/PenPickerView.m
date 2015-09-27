@@ -38,9 +38,6 @@ static NSString* CELL_ID = @"PEN_PICKER";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PenPickerCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[PenPickerCell alloc] init];
-    }
     [cell setPen:[[PenManager instance].pens objectAtIndex:indexPath.row]];
     return cell;
 }
