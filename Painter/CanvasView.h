@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Line.h"
+#import "PenRef.h"
 
 @interface CanvasView : UIView
 
-@property (nonatomic) Line *currentLine;
-@property (nonatomic) NSMutableArray *linesCompleted;
-@property (nonatomic) UIColor *drawColor;
+@property (strong, nonatomic) Line *currentLine;
+@property (strong, nonatomic) NSMutableArray *linesCompleted;
+@property (strong, nonatomic) UIColor *drawColor;
+@property (strong, nonatomic) PenRef *pen;
 
 @end

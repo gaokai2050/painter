@@ -10,10 +10,12 @@
 #import <UIKit/UIKit.h>
 #import "PenRef.h"
 #import "PenManager.h"
+#import "PaperRef.h"
 
 @interface SketchPad : NSObject
 
 @property (strong, nonatomic) PenRef* pen;
+@property (strong, nonatomic) PaperRef* paper;
 @property (strong, nonatomic) UIColor* color;
 
 @end

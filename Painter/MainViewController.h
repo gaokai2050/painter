@@ -13,7 +13,7 @@
 #import "PenPickerView.h"
 #import "CanvasView.h"
 
-@interface MainViewController : UIViewController <ColorPickerDelegate>
+@interface MainViewController : UIViewController <ColorPickerDelegate, PenPickerDelegate>
 
 @property (strong, nonatomic) SketchPad *pad;
 

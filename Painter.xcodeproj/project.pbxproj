@@ -19,6 +19,8 @@
 		2B54F60B1BA1771900A92270 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B54F60A1BA1771900A92270 /* MainViewController.xib */; };
 		2B54F60E1BA17C9300A92270 /* ColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F60D1BA17C9300A92270 /* ColorPickerView.m */; };
 		2B54F6111BA19A3A00A92270 /* ColorPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */; };
+		2B7EA7FC1BBB94250024C3F2 /* PaperRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA7FB1BBB94250024C3F2 /* PaperRef.m */; settings = {ASSET_TAGS = (); }; };
+		2B7EA7FF1BBB94AD0024C3F2 /* PaperManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA7FE1BBB94AD0024C3F2 /* PaperManager.m */; settings = {ASSET_TAGS = (); }; };
 		2BD021581BA423D8005CD013 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021571BA423D8005CD013 /* MainViewController.m */; };
 		2BD0215B1BA42570005CD013 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0215A1BA42570005CD013 /* CanvasView.m */; };
 		2BD0215E1BA42599005CD013 /* PaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0215D1BA42599005CD013 /* PaletteView.m */; };
@@ -67,6 +69,10 @@
 		2B54F60D1BA17C9300A92270 /* ColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerView.m; sourceTree = "<group>"; };
 		2B54F60F1BA19A3A00A92270 /* ColorPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerCell.h; sourceTree = "<group>"; };
 		2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerCell.m; sourceTree = "<group>"; };
+		2B7EA7FA1BBB94250024C3F2 /* PaperRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperRef.h; sourceTree = "<group>"; };
+		2B7EA7FB1BBB94250024C3F2 /* PaperRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperRef.m; sourceTree = "<group>"; };
+		2B7EA7FD1BBB94AD0024C3F2 /* PaperManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperManager.h; sourceTree = "<group>"; };
+		2B7EA7FE1BBB94AD0024C3F2 /* PaperManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperManager.m; sourceTree = "<group>"; };
 		2BD021561BA423D8005CD013 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		2BD021571BA423D8005CD013 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2BD021591BA42570005CD013 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
@@ -137,29 +143,10 @@
 		2B54F5E11B9A926E00A92270 /* Painter */ = {
 			isa = PBXGroup;
 			children = (
+				2B7EA7F91BBB93A20024C3F2 /* Views */,
+				2B7EA7F81BBB93430024C3F2 /* DataModel */,
 				2B54F5E61B9A926E00A92270 /* AppDelegate.h */,
 				2B54F5E71B9A926E00A92270 /* AppDelegate.m */,
-				2B54F60A1BA1771900A92270 /* MainViewController.xib */,
-				2BD0215C1BA42599005CD013 /* PaletteView.h */,
-				2BD0215D1BA42599005CD013 /* PaletteView.m */,
-				2BD021591BA42570005CD013 /* CanvasView.h */,
-				2BD0215A1BA42570005CD013 /* CanvasView.m */,
-				2BD021621BA5409D005CD013 /* Line.h */,
-				2BD021631BA5409D005CD013 /* Line.m */,
-				2BD021561BA423D8005CD013 /* MainViewController.h */,
-				2BD021571BA423D8005CD013 /* MainViewController.m */,
-				2BD021751BB1312F005CD013 /* PenManager.h */,
-				2BD021761BB1312F005CD013 /* PenManager.m */,
-				2BD021721BB13051005CD013 /* PenRef.h */,
-				2BD021731BB13051005CD013 /* PenRef.m */,
-				2BD0215F1BA425CF005CD013 /* PenPickerView.h */,
-				2BD021601BA425CF005CD013 /* PenPickerView.m */,
-				2BD0216A1BB127E8005CD013 /* PenPickerCell.h */,
-				2BD0216B1BB127E8005CD013 /* PenPickerCell.m */,
-				2B54F60C1BA17C9300A92270 /* ColorPickerView.h */,
-				2B54F60D1BA17C9300A92270 /* ColorPickerView.m */,
-				2B54F60F1BA19A3A00A92270 /* ColorPickerCell.h */,
-				2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */,
 				2B54F5E91B9A926E00A92270 /* ViewController.h */,
 				2B54F5EA1B9A926E00A92270 /* ViewController.m */,
 				2B54F5EC1B9A926E00A92270 /* Main.storyboard */,
@@ -167,8 +154,6 @@
 				2B54F5F11B9A926E00A92270 /* LaunchScreen.xib */,
 				2BD021671BA6BBAA005CD013 /* Resources */,
 				2B54F5E21B9A926E00A92270 /* Supporting Files */,
-				2BD021781BB13E58005CD013 /* SketchPad.h */,
-				2BD021791BB13E58005CD013 /* SketchPad.m */,
 				2B3E82671BB6DE0500888970 /* Common.h */,
 				2B3E82681BB6DE0500888970 /* Common.m */,
 			);
@@ -199,6 +184,47 @@
 				2B54F5FD1B9A926E00A92270 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B7EA7F81BBB93430024C3F2 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BD021781BB13E58005CD013 /* SketchPad.h */,
+				2BD021791BB13E58005CD013 /* SketchPad.m */,
+				2BD021751BB1312F005CD013 /* PenManager.h */,
+				2BD021761BB1312F005CD013 /* PenManager.m */,
+				2BD021721BB13051005CD013 /* PenRef.h */,
+				2BD021731BB13051005CD013 /* PenRef.m */,
+				2B7EA7FD1BBB94AD0024C3F2 /* PaperManager.h */,
+				2B7EA7FE1BBB94AD0024C3F2 /* PaperManager.m */,
+				2B7EA7FA1BBB94250024C3F2 /* PaperRef.h */,
+				2B7EA7FB1BBB94250024C3F2 /* PaperRef.m */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		2B7EA7F91BBB93A20024C3F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B54F60A1BA1771900A92270 /* MainViewController.xib */,
+				2BD021561BA423D8005CD013 /* MainViewController.h */,
+				2BD021571BA423D8005CD013 /* MainViewController.m */,
+				2BD021591BA42570005CD013 /* CanvasView.h */,
+				2BD0215A1BA42570005CD013 /* CanvasView.m */,
+				2BD021621BA5409D005CD013 /* Line.h */,
+				2BD021631BA5409D005CD013 /* Line.m */,
+				2BD0215C1BA42599005CD013 /* PaletteView.h */,
+				2BD0215D1BA42599005CD013 /* PaletteView.m */,
+				2BD0215F1BA425CF005CD013 /* PenPickerView.h */,
+				2BD021601BA425CF005CD013 /* PenPickerView.m */,
+				2BD0216A1BB127E8005CD013 /* PenPickerCell.h */,
+				2BD0216B1BB127E8005CD013 /* PenPickerCell.m */,
+				2B54F60C1BA17C9300A92270 /* ColorPickerView.h */,
+				2B54F60D1BA17C9300A92270 /* ColorPickerView.m */,
+				2B54F60F1BA19A3A00A92270 /* ColorPickerCell.h */,
+				2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		2BD021671BA6BBAA005CD013 /* Resources */ = {
@@ -396,7 +422,9 @@
 				2BD021641BA5409D005CD013 /* Line.m in Sources */,
 				2BD021741BB13051005CD013 /* PenRef.m in Sources */,
 				2B54F5EB1B9A926E00A92270 /* ViewController.m in Sources */,
+				2B7EA7FF1BBB94AD0024C3F2 /* PaperManager.m in Sources */,
 				2BD0217A1BB13E58005CD013 /* SketchPad.m in Sources */,
+				2B7EA7FC1BBB94250024C3F2 /* PaperRef.m in Sources */,
 				2BD0215B1BA42570005CD013 /* CanvasView.m in Sources */,
 				2B54F5E81B9A926E00A92270 /* AppDelegate.m in Sources */,
 				2B3E82691BB6DE0500888970 /* Common.m in Sources */,
