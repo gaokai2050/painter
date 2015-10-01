@@ -25,10 +25,18 @@ static PenManager* instance;
 {
     self = [super init];
     if (self) {
-        PenRef* p1 = [[PenRef alloc] initWithName:@"crayon" displayName:@"Crayon" image:[UIImage imageNamed:@"crayon.jpg"]];
-        PenRef* p2 = [[PenRef alloc] initWithName:@"paint" displayName:@"Paint" image:[UIImage imageNamed:@"paint-brush.jpg"]];
-        PenRef* p3 = [[PenRef alloc] initWithName:@"water" displayName:@"Water" image:[UIImage imageNamed:@"water-color-paint-brush.jpg"]];
-        _pens = [[NSArray alloc] initWithObjects:p1, p2, p3, nil];
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"SketchPad" ofType:@"plist"];
+        NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+        NSArray *penList = [dic objectForKey:@"PenRefList"];
+        NSMutableArray *pens = [[NSMutableArray alloc] init];
+        
+        [penList enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
+            NSDictionary *penRefDict = obj;
+            PenRef *pen = [[PenRef alloc] initWithDict:penRefDict];
+            [pens addObject:pen];
+        }];
+
+        _pens = [[NSArray alloc] initWithArray:pens];
     }
     return self;
 }

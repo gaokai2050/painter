@@ -10,13 +10,26 @@
 
 @implementation PenRef
 
--(id) initWithName:(NSString*)name displayName:(NSString*)displayName image:(UIImage*)image
+-(id) initWithName:(NSString*)name displayName:(NSString*)displayName image:(UIImage*)image alpha:(CGFloat)alpha
 {
     self = [super init];
     if (self) {
         self.name = name;
         self.displayName = displayName;
         self.image = image;
+        self.alpha = alpha;
+    }
+    return self;
+}
+
+-(id) initWithDict:(NSDictionary*)dict
+{
+    self = [super init];
+    if (self) {
+        self.name = [dict objectForKey:@"name"];
+        self.displayName = [dict objectForKey:@"displayName"];
+        self.image = [UIImage imageNamed:[dict objectForKey:@"image"]];
+        self.alpha = [[dict objectForKey:@"alpha"] floatValue];
     }
     return self;
 }

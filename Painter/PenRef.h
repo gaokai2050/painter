@@ -14,7 +14,9 @@
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSString* displayName;
 @property (strong, nonatomic) UIImage* image; // Image used in PenPickerView
+@property (nonatomic) CGFloat alpha;
 
--(id) initWithName:(NSString*)name displayName:(NSString*)displayName image:(UIImage*)image;
+-(id) initWithName:(NSString*)name displayName:(NSString*)displayName image:(UIImage*)image alpha:(CGFloat)alpha;
+-(id) initWithDict:(NSDictionary*)dict;
 
 @end

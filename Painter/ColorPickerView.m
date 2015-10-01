@@ -8,17 +8,17 @@
 
 #import "ColorPickerView.h"
 #import "ColorPickerCell.h"
+#import "ColorManager.h"
 
 @implementation ColorPickerView
 
 static NSString* CELL_ID = @"COLOR_PICKER";
-static NSArray* COLORS = nil;
 
-//- (void)awakeFromNib
-//{
-//    [super awakeFromNib];
-//    [self internalInitialize];
-//}
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self internalInitialize];
+}
 - (id)initWithCoder:(NSCoder *)c
 {
     self = [super initWithCoder:c];
@@ -27,19 +27,16 @@ static NSArray* COLORS = nil;
     }
     return self;
 }
-//- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout // the designated initializer
-//{
-//    self = [super initWithFrame:frame collectionViewLayout:layout];
-//    if (self) {
-//        [self internalInitialize];
-//    }
-//    return self;
-//}
+- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout // the designated initializer
+{
+    self = [super initWithFrame:frame collectionViewLayout:layout];
+    if (self) {
+        [self internalInitialize];
+    }
+    return self;
+}
 - (void)internalInitialize
 {
-    if (!COLORS) {
-        COLORS = [[NSArray alloc] initWithObjects:[UIColor blackColor], [UIColor redColor], [UIColor blueColor], [UIColor yellowColor], [UIColor whiteColor], [UIColor greenColor], nil];
-    }
     self.dataSource = self;
     self.delegate = self;
     [self registerClass:[ColorPickerCell class] forCellWithReuseIdentifier:CELL_ID];
@@ -48,12 +45,12 @@ static NSArray* COLORS = nil;
 #pragma mark - UICollectionViewDataSource
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [COLORS count];
+    return [[ColorManager instance].color count];
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ColorPickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
-    [cell setColor:COLORS[indexPath.row] ];
+    [cell setColor: [[ColorManager instance].color objectAtIndex:indexPath.row]];
     return cell;
 }
 

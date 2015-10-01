@@ -16,8 +16,10 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetLineWidth(context, 5.0);
+    CGContextSetBlendMode(context, kCGBlendModeMultiply);
+    CGContextSetLineWidth(context, 15.0);
     CGContextSetLineCap(context, kCGLineCapRound);
+    
     for (Line *line in self.linesCompleted) {
         [[line color] set];
         CGContextMoveToPoint(context, [line begin].x, [line begin].y);
@@ -45,8 +47,6 @@
     if (self) {
         _linesCompleted = [[NSMutableArray alloc] init];
         [self setMultipleTouchEnabled:YES];
-        
-        _drawColor = [UIColor blackColor];
         [self becomeFirstResponder];
     }
     return self;
@@ -61,7 +61,7 @@
         Line *newLine = [[Line alloc] init];
         [newLine setBegin:loc];
         [newLine setEnd:loc];
-        [newLine setColor:_drawColor];
+        [newLine setColor:self.pad.drawColor];
         _currentLine = newLine;
     }
 }
@@ -70,7 +70,7 @@
     //TODO: How to handle multiple touch events?
 #warning 主任，多点触摸这里touches数组会有多个值，分别处理就可以了，现在好像会乱
     for (UITouch *t in touches) {
-        [self.currentLine setColor:_drawColor];
+        [self.currentLine setColor:self.pad.drawColor];
         CGPoint loc = [t locationInView:self];
         [self.currentLine setEnd:loc];
             
@@ -80,7 +80,7 @@
         Line *newLine = [[Line alloc] init];
         [newLine setBegin:loc];
         [newLine setEnd:loc];
-        [newLine setColor:_drawColor];
+        [newLine setColor:self.pad.drawColor];
         self.currentLine = newLine;
     }
 }

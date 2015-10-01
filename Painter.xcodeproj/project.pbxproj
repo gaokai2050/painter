@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B13B8641BBCE67900D8E0A9 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B13B8631BBCE67900D8E0A9 /* ColorManager.m */; settings = {ASSET_TAGS = (); }; };
 		2B3E82691BB6DE0500888970 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E82681BB6DE0500888970 /* Common.m */; settings = {ASSET_TAGS = (); }; };
 		2B54F5E51B9A926E00A92270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F5E41B9A926E00A92270 /* main.m */; };
 		2B54F5E81B9A926E00A92270 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F5E71B9A926E00A92270 /* AppDelegate.m */; };
@@ -21,6 +22,7 @@
 		2B54F6111BA19A3A00A92270 /* ColorPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */; };
 		2B7EA7FC1BBB94250024C3F2 /* PaperRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA7FB1BBB94250024C3F2 /* PaperRef.m */; settings = {ASSET_TAGS = (); }; };
 		2B7EA7FF1BBB94AD0024C3F2 /* PaperManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA7FE1BBB94AD0024C3F2 /* PaperManager.m */; settings = {ASSET_TAGS = (); }; };
+		2B7EA8011BBB9CEB0024C3F2 /* SketchPad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B7EA8001BBB9CEB0024C3F2 /* SketchPad.plist */; settings = {ASSET_TAGS = (); }; };
 		2BD021581BA423D8005CD013 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021571BA423D8005CD013 /* MainViewController.m */; };
 		2BD0215B1BA42570005CD013 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0215A1BA42570005CD013 /* CanvasView.m */; };
 		2BD0215E1BA42599005CD013 /* PaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0215D1BA42599005CD013 /* PaletteView.m */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B13B8621BBCE67900D8E0A9 /* ColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
+		2B13B8631BBCE67900D8E0A9 /* ColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
 		2B3E82671BB6DE0500888970 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		2B3E82681BB6DE0500888970 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		2B54F5DF1B9A926E00A92270 /* Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Painter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +77,7 @@
 		2B7EA7FB1BBB94250024C3F2 /* PaperRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperRef.m; sourceTree = "<group>"; };
 		2B7EA7FD1BBB94AD0024C3F2 /* PaperManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperManager.h; sourceTree = "<group>"; };
 		2B7EA7FE1BBB94AD0024C3F2 /* PaperManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperManager.m; sourceTree = "<group>"; };
+		2B7EA8001BBB9CEB0024C3F2 /* SketchPad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SketchPad.plist; sourceTree = "<group>"; };
 		2BD021561BA423D8005CD013 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		2BD021571BA423D8005CD013 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2BD021591BA42570005CD013 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
@@ -165,6 +170,7 @@
 			children = (
 				2B54F5E31B9A926E00A92270 /* Info.plist */,
 				2B54F5E41B9A926E00A92270 /* main.m */,
+				2B7EA8001BBB9CEB0024C3F2 /* SketchPad.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 				2B7EA7FE1BBB94AD0024C3F2 /* PaperManager.m */,
 				2B7EA7FA1BBB94250024C3F2 /* PaperRef.h */,
 				2B7EA7FB1BBB94250024C3F2 /* PaperRef.m */,
+				2B13B8621BBCE67900D8E0A9 /* ColorManager.h */,
+				2B13B8631BBCE67900D8E0A9 /* ColorManager.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -346,6 +354,7 @@
 				2BD021711BB12DC3005CD013 /* water-color-paint-brush.jpg in Resources */,
 				2BD021691BB11E93005CD013 /* crayon.jpg in Resources */,
 				2B54F5F01B9A926E00A92270 /* Images.xcassets in Resources */,
+				2B7EA8011BBB9CEB0024C3F2 /* SketchPad.plist in Resources */,
 				2B54F60B1BA1771900A92270 /* MainViewController.xib in Resources */,
 				2BD0216F1BB12C96005CD013 /* paint-brush.jpg in Resources */,
 			);
@@ -426,6 +435,7 @@
 				2BD0217A1BB13E58005CD013 /* SketchPad.m in Sources */,
 				2B7EA7FC1BBB94250024C3F2 /* PaperRef.m in Sources */,
 				2BD0215B1BA42570005CD013 /* CanvasView.m in Sources */,
+				2B13B8641BBCE67900D8E0A9 /* ColorManager.m in Sources */,
 				2B54F5E81B9A926E00A92270 /* AppDelegate.m in Sources */,
 				2B3E82691BB6DE0500888970 /* Common.m in Sources */,
 				2BD021771BB1312F005CD013 /* PenManager.m in Sources */,

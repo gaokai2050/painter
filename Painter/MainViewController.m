@@ -22,11 +22,11 @@
     [super viewDidLoad];
     _colorPicker.pickDelegate = self;
     _penPicker.pickDelegate = self;
+    _canvas.pad = _pad;
 }
 
 - (void)colorSelected:(UIColor *)color {
     [_palette colorSelected:color];
-    _canvas.drawColor = color;
     _pad.color = color;
 }
 
