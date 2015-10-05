@@ -9,9 +9,11 @@
 #import <Math.h>
 #import "Line.h"
 
-@implementation Line
+@interface Line()
+@property (nonatomic) BOOL widthCalculated;
+@end
 
-BOOL widthCalculated = NO;
+@implementation Line
 
 @synthesize width = _width;
 
@@ -19,6 +21,7 @@ BOOL widthCalculated = NO;
 {
     self = [super init];
     if (self) {
+        self.widthCalculated = NO;
         self.color = [UIColor blackColor];
         _width = 5.0;
     }
@@ -36,14 +39,14 @@ BOOL widthCalculated = NO;
 
 -(CGFloat)width
 {
-    if (!widthCalculated && self.pen) {
+    if (!self.widthCalculated && self.pen) {
         // 根据不同的笔，计算笔画的宽度
         double deltaX = self.end.x - self.begin.x, deltaY = self.end.y - self.begin.y;
         double l = hypot(fabs(deltaX), fabs(deltaY));
-        if (l > 0) {
+        if (l > 0.1) {
             double a = asin((self.end.y - self.begin.y) / l);
             _width = [self.pen calculatePenWidth:self.touchDepth angle:a];
-            widthCalculated = YES;
+            self.widthCalculated = YES;
         }
     }
     return _width;
