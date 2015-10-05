@@ -13,6 +13,6 @@
 
 +(PenManager*)instance;
 
-@property (strong, nonatomic, readonly) NSArray* pens;
+@property (strong, nonatomic, readonly) NSArray *pens;
 
 @end

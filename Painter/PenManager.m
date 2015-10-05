@@ -30,11 +30,10 @@ static PenManager* instance;
         NSArray *penList = [dic objectForKey:@"PenRefList"];
         NSMutableArray *pens = [[NSMutableArray alloc] init];
         
-        [penList enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
-            NSDictionary *penRefDict = obj;
+        for (NSDictionary *penRefDict in penList) {
             PenRef *pen = [[PenRef alloc] initWithDict:penRefDict];
             [pens addObject:pen];
-        }];
+        }
 
         _pens = [[NSArray alloc] initWithArray:pens];
     }

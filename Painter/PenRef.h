@@ -16,7 +16,9 @@
 @property (strong, nonatomic) UIImage* image; // Image used in PenPickerView
 @property (nonatomic) CGFloat alpha;
 
--(id) initWithName:(NSString*)name displayName:(NSString*)displayName image:(UIImage*)image alpha:(CGFloat)alpha;
+//-(id) initWithName:(NSString*)name displayName:(NSString*)displayName image:(UIImage*)image alpha:(CGFloat)alpha;
 -(id) initWithDict:(NSDictionary*)dict;
+
+-(CGFloat)calculatePenWidth:(CGFloat)depth angle:(CGFloat)angle;
 
 @end

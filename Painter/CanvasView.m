@@ -17,14 +17,10 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSetBlendMode(context, kCGBlendModeMultiply);
-    CGContextSetLineWidth(context, 15.0);
     CGContextSetLineCap(context, kCGLineCapRound);
     
     for (Line *line in self.linesCompleted) {
-        [[line color] set];
-        CGContextMoveToPoint(context, [line begin].x, [line begin].y);
-        CGContextAddLineToPoint(context, [line end].x, [line end].y);
-        CGContextStrokePath(context);
+        [line drawInContext:context withRect:rect];
     }
 }
 
@@ -58,11 +54,9 @@
     for (UITouch *t in touches) {
         // Create a line for the value
         CGPoint loc = [t locationInView:self];
-        Line *newLine = [[Line alloc] init];
-        [newLine setBegin:loc];
-        [newLine setEnd:loc];
-        [newLine setColor:self.pad.drawColor];
-        _currentLine = newLine;
+        CGFloat penAngle = 0; //TODO: Pen Angle
+        CGFloat touchDepth = 1; //TODO: 3D Touch
+        [self startNewLineAt:loc penAngle:penAngle touchDepth:touchDepth];
     }
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -70,18 +64,15 @@
     //TODO: How to handle multiple touch events?
 #warning 主任，多点触摸这里touches数组会有多个值，分别处理就可以了，现在好像会乱
     for (UITouch *t in touches) {
-        [self.currentLine setColor:self.pad.drawColor];
         CGPoint loc = [t locationInView:self];
-        [self.currentLine setEnd:loc];
-            
+        CGFloat penAngle = 0; //TODO: Pen Angle
+        CGFloat touchDepth = 1; //TODO: 3D Touch
+        
         if (self.currentLine) {
+            self.currentLine.end = loc;
             [self addLine:self.currentLine];
         }
-        Line *newLine = [[Line alloc] init];
-        [newLine setBegin:loc];
-        [newLine setEnd:loc];
-        [newLine setColor:self.pad.drawColor];
-        self.currentLine = newLine;
+        [self startNewLineAt:loc penAngle:penAngle touchDepth:touchDepth];
     }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -93,7 +84,16 @@
 {
     [self endTouches:touches];
 }
-
+- (void)startNewLineAt:(CGPoint)point penAngle:(CGFloat)penAngle touchDepth:(CGFloat)touchDepth
+{
+    Line *line = [[Line alloc] init];
+    line.pen = self.pad.pen;
+    line.begin = line.end = point;
+    line.color = self.pad.drawColor;
+    line.penAngle = penAngle;
+    line.touchDepth = touchDepth;
+    self.currentLine = line;
+}
 - (void)addLine:(Line*)line
 {
     [[self.undoManager prepareWithInvocationTarget:self] removeLine:line];

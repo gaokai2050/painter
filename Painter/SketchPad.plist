@@ -128,6 +128,14 @@
 			<string>crayon.jpg</string>
 			<key>alpha</key>
 			<real>1</real>
+			<key>minWidth</key>
+			<real>5</real>
+			<key>maxWidth</key>
+			<real>5</real>
+			<key>widthParam0</key>
+			<real>1</real>
+			<key>widthSelector</key>
+			<string>penWidthSelectorSame</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -138,6 +146,14 @@
 			<string>paint-brush.jpg</string>
 			<key>alpha</key>
 			<real>1</real>
+			<key>minWidth</key>
+			<real>15.0</real>
+			<key>maxWidth</key>
+			<real>15.0</real>
+			<key>widthParam0</key>
+			<real>1</real>
+			<key>widthSelector</key>
+			<string>penWidthSelectorAngle</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -148,6 +164,14 @@
 			<string>water-color-paint-brush.jpg</string>
 			<key>alpha</key>
 			<real>0.5</real>
+			<key>minWidth</key>
+			<real>5.0</real>
+			<key>maxWidth</key>
+			<real>20.0</real>
+			<key>widthParam0</key>
+			<real>0.4</real>
+			<key>widthSelector</key>
+			<string>penWidthSelectorRatio</string>
 		</dict>
 	</array>
 </dict>
