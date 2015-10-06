@@ -17,7 +17,8 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSetBlendMode(context, kCGBlendModeMultiply);
-    CGContextSetLineCap(context, kCGLineCapRound);
+//    CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineCap(context, kCGLineCapSquare);
     
     for (Line *line in self.linesCompleted) {
         [line drawInContext:context withRect:rect];
@@ -108,20 +109,16 @@
         [self setNeedsDisplay];
     }
 }
-//TODO: What's this?
 - (void)removeLineByEndPoint:(CGPoint)point
 {
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         Line *evaluatedLine = (Line*)evaluatedObject;
-        //        return (evaluatedLine.end.x == point.x && evaluatedLine.end.y == point.y) ||
-        //               (evaluatedLine.end.x == point.x - 1.0f && evaluatedLine.end.y == point.y - 1.0f) ||
-        //               (evaluatedLine.end.x == point.x + 1.0f && evaluatedLine.end.y == point.y + 1.0f);
-        return (evaluatedLine.end.x <= point.x-1 || evaluatedLine.end.x > point.x+1) &&
-        (evaluatedLine.end.y <= point.y-1 || evaluatedLine.end.y > point.y+1);
+        return (evaluatedLine.end.x >= point.x - 1 && evaluatedLine.end.x < point.x + 1) &&
+        (evaluatedLine.end.y >= point.y - 1 || evaluatedLine.end.y < point.y + 1);
     }];
     NSArray *result = [self.linesCompleted filteredArrayUsingPredicate:predicate];
     if (result && result.count > 0) {
-        [self.linesCompleted removeObject:result[0]];
+        [self removeLine:result[0]];
     }
 }
 - (void)endTouches:(NSSet *)touches

@@ -13,11 +13,8 @@
 
 @interface CanvasView : UIView
 
+@property (strong, nonatomic) SketchPad *pad;
 @property (strong, nonatomic) Line *currentLine;
 @property (strong, nonatomic) NSMutableArray *linesCompleted;
-//@property (strong, nonatomic) UIColor *drawColor;
-//@property (strong, nonatomic) PenRef *pen;
-
-@property (strong, nonatomic) SketchPad *pad;
 
 @end
