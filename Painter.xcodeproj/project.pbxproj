@@ -27,7 +27,7 @@
 		2BD0215B1BA42570005CD013 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0215A1BA42570005CD013 /* CanvasView.m */; };
 		2BD0215E1BA42599005CD013 /* PaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0215D1BA42599005CD013 /* PaletteView.m */; };
 		2BD021611BA425CF005CD013 /* PenPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021601BA425CF005CD013 /* PenPickerView.m */; };
-		2BD021641BA5409D005CD013 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021631BA5409D005CD013 /* Line.m */; };
+		2BD021641BA5409D005CD013 /* LineInCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021631BA5409D005CD013 /* LineInCanvas.m */; };
 		2BD021661BA6BB9D005CD013 /* palette.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD021651BA6BB9D005CD013 /* palette.png */; };
 		2BD021691BB11E93005CD013 /* crayon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BD021681BB11E93005CD013 /* crayon.jpg */; };
 		2BD0216C1BB127E8005CD013 /* PenPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0216B1BB127E8005CD013 /* PenPickerCell.m */; };
@@ -86,8 +86,8 @@
 		2BD0215D1BA42599005CD013 /* PaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteView.m; sourceTree = "<group>"; };
 		2BD0215F1BA425CF005CD013 /* PenPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenPickerView.h; sourceTree = "<group>"; };
 		2BD021601BA425CF005CD013 /* PenPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenPickerView.m; sourceTree = "<group>"; };
-		2BD021621BA5409D005CD013 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
-		2BD021631BA5409D005CD013 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		2BD021621BA5409D005CD013 /* LineInCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineInCanvas.h; sourceTree = "<group>"; };
+		2BD021631BA5409D005CD013 /* LineInCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineInCanvas.m; sourceTree = "<group>"; };
 		2BD021651BA6BB9D005CD013 /* palette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = palette.png; path = Painter/palette.png; sourceTree = "<group>"; };
 		2BD021681BB11E93005CD013 /* crayon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = crayon.jpg; path = Painter/crayon.jpg; sourceTree = "<group>"; };
 		2BD0216A1BB127E8005CD013 /* PenPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenPickerCell.h; sourceTree = "<group>"; };
@@ -219,8 +219,8 @@
 				2BD021571BA423D8005CD013 /* MainViewController.m */,
 				2BD021591BA42570005CD013 /* CanvasView.h */,
 				2BD0215A1BA42570005CD013 /* CanvasView.m */,
-				2BD021621BA5409D005CD013 /* Line.h */,
-				2BD021631BA5409D005CD013 /* Line.m */,
+				2BD021621BA5409D005CD013 /* LineInCanvas.h */,
+				2BD021631BA5409D005CD013 /* LineInCanvas.m */,
 				2BD0215C1BA42599005CD013 /* PaletteView.h */,
 				2BD0215D1BA42599005CD013 /* PaletteView.m */,
 				2BD0215F1BA425CF005CD013 /* PenPickerView.h */,
@@ -428,7 +428,7 @@
 				2BD021581BA423D8005CD013 /* MainViewController.m in Sources */,
 				2BD0215E1BA42599005CD013 /* PaletteView.m in Sources */,
 				2B54F60E1BA17C9300A92270 /* ColorPickerView.m in Sources */,
-				2BD021641BA5409D005CD013 /* Line.m in Sources */,
+				2BD021641BA5409D005CD013 /* LineInCanvas.m in Sources */,
 				2BD021741BB13051005CD013 /* PenRef.m in Sources */,
 				2B54F5EB1B9A926E00A92270 /* ViewController.m in Sources */,
 				2B7EA7FF1BBB94AD0024C3F2 /* PaperManager.m in Sources */,
