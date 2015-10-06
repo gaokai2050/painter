@@ -43,7 +43,7 @@
         // 根据不同的笔，计算笔画的宽度
         double deltaX = self.end.x - self.begin.x, deltaY = self.end.y - self.begin.y;
         double l = hypot(fabs(deltaX), fabs(deltaY));
-        if (l > 0.1) {
+        if (l > 1.4) {
             double a = asin((self.end.y - self.begin.y) / l);
             _width = [self.pen calculatePenWidth:self.touchDepth angle:a];
             self.widthCalculated = YES;
