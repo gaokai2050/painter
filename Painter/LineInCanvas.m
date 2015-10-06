@@ -7,7 +7,7 @@
 //
 
 #import <Math.h>
-#import "Line.h"
+#import "LineInCanvas.h"
 
 @interface Line()
 @property (nonatomic) BOOL widthCalculated;

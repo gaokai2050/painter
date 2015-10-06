@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Line.h"
+#import "LineInCanvas.h"
 #import "SketchPad.h"
 #import "PenRef.h"
 
