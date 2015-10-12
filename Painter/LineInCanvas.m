@@ -1,5 +1,5 @@
 //
-//  Line.m
+//  LineInCanvas.m
 //  Painter
 //
 //  Created by Michael Gao on 15/9/13.
@@ -9,11 +9,11 @@
 #import <Math.h>
 #import "LineInCanvas.h"
 
-@interface Line()
+@interface LineInCanvas()
 @property (nonatomic) BOOL widthCalculated;
 @end
 
-@implementation Line
+@implementation LineInCanvas
 
 @synthesize width = _width;
 
@@ -22,7 +22,6 @@
     self = [super init];
     if (self) {
         self.widthCalculated = NO;
-        self.color = [UIColor blackColor];
         _width = 5.0;
     }
     return self;

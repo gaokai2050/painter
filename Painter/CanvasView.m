@@ -20,7 +20,7 @@
 //    CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetLineCap(context, kCGLineCapSquare);
     
-    for (Line *line in self.linesCompleted) {
+    for (LineInCanvas *line in self.linesCompleted) {
         [line drawInContext:context withRect:rect];
     }
 }
@@ -87,7 +87,7 @@
 }
 - (void)startNewLineAt:(CGPoint)point penAngle:(CGFloat)penAngle touchDepth:(CGFloat)touchDepth
 {
-    Line *line = [[Line alloc] init];
+    LineInCanvas *line = [[LineInCanvas alloc] init];
     line.pen = self.pad.pen;
     line.begin = line.end = point;
     line.color = self.pad.drawColor;
@@ -95,13 +95,13 @@
     line.touchDepth = touchDepth;
     self.currentLine = line;
 }
-- (void)addLine:(Line*)line
+- (void)addLine:(LineInCanvas*)line
 {
     [[self.undoManager prepareWithInvocationTarget:self] removeLine:line];
     [self.linesCompleted addObject:line];
     [self setNeedsDisplay];
 }
-- (void)removeLine:(Line*)line
+- (void)removeLine:(LineInCanvas*)line
 {
     if ([self.linesCompleted containsObject:line]) {
         [[self.undoManager prepareWithInvocationTarget:self] addLine:line];

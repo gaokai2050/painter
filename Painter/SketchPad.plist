@@ -174,5 +174,24 @@
 			<string>penWidthSelectorRatio</string>
 		</dict>
 	</array>
+	<key>Palette</key>
+	<dict>
+		<key>Frame</key>
+		<array>
+			<string>{5,5}</string>
+			<string>{5,111}</string>
+			<string>{196,111}</string>
+			<string>{196,5}</string>
+		</array>
+		<key>Holes</key>
+		<array>
+			<array>
+				<string>{60,18}</string>
+				<string>{60,98}</string>
+				<string>{141,98}</string>
+				<string>{141,18}</string>
+			</array>
+		</array>
+	</dict>
 </dict>
 </plist>

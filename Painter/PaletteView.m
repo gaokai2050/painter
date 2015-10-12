@@ -9,28 +9,60 @@
 #import "PaletteView.h"
 
 @interface PaletteView()
-
 @property (nonatomic) CGImageRef backgroundImage;
-
 @end
 
 @implementation PaletteView
 
-- (id)initWithCoder:(NSCoder *)c
+-(id)initWithCoder:(NSCoder *)c
 {
     self = [super initWithCoder:c];
     if (self) {
+        [self initPolygon];
+        _backgroundColor = [UIColor whiteColor];
+        _paletteColor = [UIColor grayColor];
         _userPickedColor = [UIColor blackColor];
+        _linesCompleted = [[NSMutableArray alloc] init];
+        [self setMultipleTouchEnabled:YES];
+        [self becomeFirstResponder];
     }
     return self;
 }
-- (void)dealloc
+-(void)initPolygon
+{
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"SketchPad" ofType:@"plist"];
+    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSDictionary *palette = [dic objectForKey:@"Palette"];
+    
+    NSArray *framePointList = [palette objectForKey:@"Frame"];
+    NSMutableArray *framePoints = [[NSMutableArray alloc] init];
+    for (NSString *p in framePointList) {
+        CGPoint point = CGPointFromString(p);
+        [framePoints addObject:[NSValue valueWithCGPoint:point]];
+    }
+    NSArray *frame = [[NSArray alloc] initWithArray:framePoints];
+    
+    NSArray *holeList = [palette objectForKey:@"Holes"];
+    NSMutableArray *holes = [[NSMutableArray alloc] init];
+    for (NSArray *h in holeList) {
+        NSMutableArray *hole = [[NSMutableArray alloc] init];
+        for (NSString *p in h) {
+            CGPoint point = CGPointFromString(p);
+            [hole addObject:[NSValue valueWithCGPoint:point]];
+        }
+        [holes addObject:hole];
+    }
+    NSArray *hole = [[NSArray alloc] initWithArray:holes];
+    
+    _palette = [[Polygon alloc] initWithFrame:frame holes:hole];
+}
+-(void)dealloc
 {
     if (_backgroundImage) {
         CGImageRelease(_backgroundImage);
     }
 }
-- (CGImageRef)backgroundImage
+-(CGImageRef)backgroundImage
 {
     if (!_backgroundImage) {
         UIImage* image = [UIImage imageNamed:@"palette.png"];
@@ -38,32 +70,112 @@
     }
     return _backgroundImage;
 }
-- (void)colorSelected:(UIColor *)color {
+-(void)colorSelected:(UIColor *)color {
     _userPickedColor = color;
-    self.backgroundColor = color;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
- */
-- (void)drawRect:(CGRect)rect {
-//    NSLog(@"%@ (%.2f,%.2f)-(%.2f,%.2f)", @"PaletteView.drawRect", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+-(void)drawRect:(CGRect)rect {
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextDrawImage(context, rect, self.backgroundImage);
-    
-    CGRect drawRect = CGRectMake(20, 20, 100, 100);
-//    CGRect drawRect2 = CGRectMake(30, 30, 90, 90);
-    CGRect drawRect2 = CGRectMake(30, 30, 60, 60);
-//    CGContextBeginTransparencyLayerWithRect(context, drawRect, NULL);
-    if (_userPickedColor) {
-        CGFloat bgRed, bgGreen, bgBlue, bgAlpha;
-        [_userPickedColor getRed:&bgRed green:&bgGreen blue:&bgBlue alpha:&bgAlpha];
-        CGContextSetRGBFillColor(context, bgRed, bgGreen, bgBlue, bgAlpha);
-        CGContextFillRect(context, drawRect2);
+    //CGContextDrawImage(context, rect, self.backgroundImage);
+    [self drawPolygon:_palette.framePoints inContext:context withColor:_paletteColor];
+    for (NSArray<NSValue*>* hole in _palette.holes) {
+        [self drawPolygon:hole inContext:context withColor:_backgroundColor];
     }
-//    CGContextEndTransparencyLayer(context);
+
+    CGContextSetBlendMode(context, kCGBlendModeMultiply);
+    CGContextSetLineCap(context, kCGLineCapRound);
+    
+    for (LineInPalette *line in self.linesCompleted) {
+        [line drawInContext:context withRect:rect];
+    }
+}
+-(void)drawPolygon:(NSArray<NSValue*>*)polygon inContext:(CGContextRef)context withColor:(UIColor*)color
+{
+    CGContextSaveGState(context);
+    [color set];
+//    CGContextSetStrokeColorWithColor(context, color.CGColor);
+//    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGPoint p1 = [[polygon objectAtIndex:0] CGPointValue];
+    CGContextMoveToPoint(context, p1.x, p1.y);
+    for (int i = 0; i < polygon.count; i++) {
+        CGPoint p2 = [[polygon objectAtIndex:((i+1) % polygon.count)] CGPointValue];
+        CGContextAddLineToPoint(context, p2.x, p2.y);
+        p1 = p2;
+    }
+//    CGContextStrokePath(context);
+    CGContextFillPath(context);
+    CGContextRestoreGState(context);
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.undoManager beginUndoGrouping];
+    //Ignore multiple touch events.
+    for (UITouch *t in touches) {
+        // Create a line for the value
+        CGPoint loc = [t locationInView:self];
+        [self startNewLineAt:loc];
+        break;
+    }
+}
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    //Ignore multiple touch events.
+    for (UITouch *t in touches) {
+        CGPoint loc = [t locationInView:self];
+        if (self.currentLine) {
+            self.currentLine.end = loc;
+            NSLog(@"Current Line end in touchesMoved, (%.1f,%.1f)-(%.1f,%.1f)", self.currentLine.begin.x, self.currentLine.begin.y, self.currentLine.end.x, self.currentLine.end.y);
+            NSArray *lineInsideArray = [_palette getLineInside:self.currentLine];
+            NSLog(@"After getLineInside, get %d lines.", lineInsideArray.count);
+            for (Line *lineInside in lineInsideArray) {
+                NSLog(@"  ----(%.1f,%.1f)-(%.1f,%.1f)", lineInside.begin.x, lineInside.begin.y, lineInside.end.x, lineInside.end.y);
+                if (lineInside == self.currentLine) {
+                    [self addLine:self.currentLine];
+                } else {
+                    [self addLine:[[LineInPalette alloc] initWithLine:lineInside]];
+                }
+            }
+        }
+        [self startNewLineAt:loc];
+        break;
+    }
+}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self endTouches:touches];
+    [self.undoManager endUndoGrouping];
+}
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self endTouches:touches];
+}
+-(void)startNewLineAt:(CGPoint)point
+{
+    LineInPalette *line = [[LineInPalette alloc] init];
+    line.begin = line.end = point;
+    if (_userPickedColor) {
+        line.color = _userPickedColor;
+    }
+    self.currentLine = line;
+}
+-(void)addLine:(LineInPalette*)line
+{
+    [[self.undoManager prepareWithInvocationTarget:self] removeLine:line];
+    [self.linesCompleted addObject:line];
+    [self setNeedsDisplay];
+}
+-(void)removeLine:(LineInPalette*)line
+{
+    if ([self.linesCompleted containsObject:line]) {
+        [[self.undoManager prepareWithInvocationTarget:self] addLine:line];
+        [self.linesCompleted removeObject:line];
+        [self setNeedsDisplay];
+    }
+}
+-(void)endTouches:(NSSet *)touches
+{
+    [self setNeedsDisplay];
 }
 
 @end

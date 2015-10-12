@@ -20,6 +20,7 @@
 		2B54F60B1BA1771900A92270 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B54F60A1BA1771900A92270 /* MainViewController.xib */; };
 		2B54F60E1BA17C9300A92270 /* ColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F60D1BA17C9300A92270 /* ColorPickerView.m */; };
 		2B54F6111BA19A3A00A92270 /* ColorPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */; };
+		2B7E2C6D1BCA3D7000FFDFB9 /* GeoDrawUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E2C6C1BCA3D7000FFDFB9 /* GeoDrawUtil.m */; settings = {ASSET_TAGS = (); }; };
 		2B7EA7FC1BBB94250024C3F2 /* PaperRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA7FB1BBB94250024C3F2 /* PaperRef.m */; settings = {ASSET_TAGS = (); }; };
 		2B7EA7FF1BBB94AD0024C3F2 /* PaperManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EA7FE1BBB94AD0024C3F2 /* PaperManager.m */; settings = {ASSET_TAGS = (); }; };
 		2B7EA8011BBB9CEB0024C3F2 /* SketchPad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B7EA8001BBB9CEB0024C3F2 /* SketchPad.plist */; settings = {ASSET_TAGS = (); }; };
@@ -36,6 +37,9 @@
 		2BD021741BB13051005CD013 /* PenRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021731BB13051005CD013 /* PenRef.m */; };
 		2BD021771BB1312F005CD013 /* PenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021761BB1312F005CD013 /* PenManager.m */; };
 		2BD0217A1BB13E58005CD013 /* SketchPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD021791BB13E58005CD013 /* SketchPad.m */; };
+		2BEABD541BC3D921000D2DB6 /* LineInPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEABD531BC3D921000D2DB6 /* LineInPalette.m */; settings = {ASSET_TAGS = (); }; };
+		2BEABD571BC43017000D2DB6 /* Polygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEABD561BC43017000D2DB6 /* Polygon.m */; settings = {ASSET_TAGS = (); }; };
+		2BEABD5A1BC4CDA5000D2DB6 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEABD591BC4CDA5000D2DB6 /* Line.m */; settings = {ASSET_TAGS = (); }; };
 		EF846BCC63B84E5EB5138C40 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78024BA525E2C4183494D2A /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -73,6 +77,8 @@
 		2B54F60D1BA17C9300A92270 /* ColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerView.m; sourceTree = "<group>"; };
 		2B54F60F1BA19A3A00A92270 /* ColorPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerCell.h; sourceTree = "<group>"; };
 		2B54F6101BA19A3A00A92270 /* ColorPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerCell.m; sourceTree = "<group>"; };
+		2B7E2C6B1BCA3D7000FFDFB9 /* GeoDrawUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoDrawUtil.h; sourceTree = "<group>"; };
+		2B7E2C6C1BCA3D7000FFDFB9 /* GeoDrawUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoDrawUtil.m; sourceTree = "<group>"; };
 		2B7EA7FA1BBB94250024C3F2 /* PaperRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperRef.h; sourceTree = "<group>"; };
 		2B7EA7FB1BBB94250024C3F2 /* PaperRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperRef.m; sourceTree = "<group>"; };
 		2B7EA7FD1BBB94AD0024C3F2 /* PaperManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperManager.h; sourceTree = "<group>"; };
@@ -100,6 +106,12 @@
 		2BD021761BB1312F005CD013 /* PenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenManager.m; sourceTree = "<group>"; };
 		2BD021781BB13E58005CD013 /* SketchPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SketchPad.h; sourceTree = "<group>"; };
 		2BD021791BB13E58005CD013 /* SketchPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SketchPad.m; sourceTree = "<group>"; };
+		2BEABD521BC3D921000D2DB6 /* LineInPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineInPalette.h; sourceTree = "<group>"; };
+		2BEABD531BC3D921000D2DB6 /* LineInPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineInPalette.m; sourceTree = "<group>"; };
+		2BEABD551BC43017000D2DB6 /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygon.h; sourceTree = "<group>"; };
+		2BEABD561BC43017000D2DB6 /* Polygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Polygon.m; sourceTree = "<group>"; };
+		2BEABD581BC4CDA5000D2DB6 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		2BEABD591BC4CDA5000D2DB6 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		5441D80C25C3CEE9B4BBCF1D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CB05997F4B8C154503AF5296 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D78024BA525E2C4183494D2A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +173,8 @@
 				2B54F5E21B9A926E00A92270 /* Supporting Files */,
 				2B3E82671BB6DE0500888970 /* Common.h */,
 				2B3E82681BB6DE0500888970 /* Common.m */,
+				2B7E2C6B1BCA3D7000FFDFB9 /* GeoDrawUtil.h */,
+				2B7E2C6C1BCA3D7000FFDFB9 /* GeoDrawUtil.m */,
 			);
 			path = Painter;
 			sourceTree = "<group>";
@@ -217,12 +231,18 @@
 				2B54F60A1BA1771900A92270 /* MainViewController.xib */,
 				2BD021561BA423D8005CD013 /* MainViewController.h */,
 				2BD021571BA423D8005CD013 /* MainViewController.m */,
+				2BEABD581BC4CDA5000D2DB6 /* Line.h */,
+				2BEABD591BC4CDA5000D2DB6 /* Line.m */,
 				2BD021591BA42570005CD013 /* CanvasView.h */,
 				2BD0215A1BA42570005CD013 /* CanvasView.m */,
 				2BD021621BA5409D005CD013 /* LineInCanvas.h */,
 				2BD021631BA5409D005CD013 /* LineInCanvas.m */,
 				2BD0215C1BA42599005CD013 /* PaletteView.h */,
 				2BD0215D1BA42599005CD013 /* PaletteView.m */,
+				2BEABD521BC3D921000D2DB6 /* LineInPalette.h */,
+				2BEABD531BC3D921000D2DB6 /* LineInPalette.m */,
+				2BEABD551BC43017000D2DB6 /* Polygon.h */,
+				2BEABD561BC43017000D2DB6 /* Polygon.m */,
 				2BD0215F1BA425CF005CD013 /* PenPickerView.h */,
 				2BD021601BA425CF005CD013 /* PenPickerView.m */,
 				2BD0216A1BB127E8005CD013 /* PenPickerCell.h */,
@@ -422,12 +442,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BEABD571BC43017000D2DB6 /* Polygon.m in Sources */,
 				2B54F6111BA19A3A00A92270 /* ColorPickerCell.m in Sources */,
 				2BD021611BA425CF005CD013 /* PenPickerView.m in Sources */,
 				2BD0216C1BB127E8005CD013 /* PenPickerCell.m in Sources */,
 				2BD021581BA423D8005CD013 /* MainViewController.m in Sources */,
+				2B7E2C6D1BCA3D7000FFDFB9 /* GeoDrawUtil.m in Sources */,
 				2BD0215E1BA42599005CD013 /* PaletteView.m in Sources */,
 				2B54F60E1BA17C9300A92270 /* ColorPickerView.m in Sources */,
+				2BEABD541BC3D921000D2DB6 /* LineInPalette.m in Sources */,
 				2BD021641BA5409D005CD013 /* LineInCanvas.m in Sources */,
 				2BD021741BB13051005CD013 /* PenRef.m in Sources */,
 				2B54F5EB1B9A926E00A92270 /* ViewController.m in Sources */,
@@ -436,6 +459,7 @@
 				2B7EA7FC1BBB94250024C3F2 /* PaperRef.m in Sources */,
 				2BD0215B1BA42570005CD013 /* CanvasView.m in Sources */,
 				2B13B8641BBCE67900D8E0A9 /* ColorManager.m in Sources */,
+				2BEABD5A1BC4CDA5000D2DB6 /* Line.m in Sources */,
 				2B54F5E81B9A926E00A92270 /* AppDelegate.m in Sources */,
 				2B3E82691BB6DE0500888970 /* Common.m in Sources */,
 				2BD021771BB1312F005CD013 /* PenManager.m in Sources */,

@@ -14,7 +14,7 @@
 @interface CanvasView : UIView
 
 @property (strong, nonatomic) SketchPad *pad;
-@property (strong, nonatomic) Line *currentLine;
+@property (strong, nonatomic) LineInCanvas *currentLine;
 @property (strong, nonatomic) NSMutableArray *linesCompleted;
 
 @end
