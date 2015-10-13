@@ -59,4 +59,9 @@
     return QUIsSameDirection(self.start, point, self.end);
 }
 
+-(NSString*)description
+{
+    return [NSString stringWithFormat:@"%@ - %@, %@", NSStringFromCGPoint(self.start), NSStringFromCGPoint(self.end), self.color];
+}
+
 @end

@@ -77,12 +77,15 @@
 -(void)drawRect:(CGRect)rect {
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //画调色板的边框
     //CGContextDrawImage(context, rect, self.backgroundImage);
     [self drawPolygon:_palette.frame inContext:context withColor:_paletteColor];
     for (Polygon* hole in _palette.holes) {
         [self drawPolygon:hole inContext:context withColor:_backgroundColor];
     }
 
+    //画调色的笔墨
     CGContextBeginTransparencyLayer(context, NULL);
     CGContextSetBlendMode(context, kCGBlendModeMultiply);
     CGContextSetLineCap(context, kCGLineCapRound);

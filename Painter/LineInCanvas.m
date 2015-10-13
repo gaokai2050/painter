@@ -51,4 +51,11 @@
     return _width;
 }
 
+-(NSString*)description
+{
+    NSString *s1 = [super description];
+    NSString *s2 = [NSString stringWithFormat:@"%.1f,%@,%.1f,%.1f", self.width, self.pen, self.penAngle, self.touchDepth];
+    return [NSString stringWithFormat:@"%@,%@", s1, s2];
+}
+
 @end
