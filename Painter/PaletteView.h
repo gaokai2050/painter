@@ -13,7 +13,7 @@
 
 @interface PaletteView : UIView <ColorPickerDelegate>
 
-@property (strong, nonatomic) Polygon *palette;
+@property (strong, nonatomic) PolygonWithHoles *palette;
 @property (strong, nonatomic) UIColor *userPickedColor;
 @property (strong, nonatomic) LineInPalette *currentLine;
 @property (strong, nonatomic) NSMutableArray *linesCompleted;

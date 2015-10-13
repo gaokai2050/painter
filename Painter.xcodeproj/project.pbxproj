@@ -162,6 +162,7 @@
 			children = (
 				2B7EA7F91BBB93A20024C3F2 /* Views */,
 				2B7EA7F81BBB93430024C3F2 /* DataModel */,
+				2B7E2C6E1BCC8F2900FFDFB9 /* GeoDraw */,
 				2B54F5E61B9A926E00A92270 /* AppDelegate.h */,
 				2B54F5E71B9A926E00A92270 /* AppDelegate.m */,
 				2B54F5E91B9A926E00A92270 /* ViewController.h */,
@@ -173,8 +174,6 @@
 				2B54F5E21B9A926E00A92270 /* Supporting Files */,
 				2B3E82671BB6DE0500888970 /* Common.h */,
 				2B3E82681BB6DE0500888970 /* Common.m */,
-				2B7E2C6B1BCA3D7000FFDFB9 /* GeoDrawUtil.h */,
-				2B7E2C6C1BCA3D7000FFDFB9 /* GeoDrawUtil.m */,
 			);
 			path = Painter;
 			sourceTree = "<group>";
@@ -206,6 +205,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2B7E2C6E1BCC8F2900FFDFB9 /* GeoDraw */ = {
+			isa = PBXGroup;
+			children = (
+				2B7E2C6B1BCA3D7000FFDFB9 /* GeoDrawUtil.h */,
+				2B7E2C6C1BCA3D7000FFDFB9 /* GeoDrawUtil.m */,
+				2BEABD581BC4CDA5000D2DB6 /* Line.h */,
+				2BEABD591BC4CDA5000D2DB6 /* Line.m */,
+				2BEABD551BC43017000D2DB6 /* Polygon.h */,
+				2BEABD561BC43017000D2DB6 /* Polygon.m */,
+			);
+			name = GeoDraw;
+			sourceTree = "<group>";
+		};
 		2B7EA7F81BBB93430024C3F2 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,8 +243,6 @@
 				2B54F60A1BA1771900A92270 /* MainViewController.xib */,
 				2BD021561BA423D8005CD013 /* MainViewController.h */,
 				2BD021571BA423D8005CD013 /* MainViewController.m */,
-				2BEABD581BC4CDA5000D2DB6 /* Line.h */,
-				2BEABD591BC4CDA5000D2DB6 /* Line.m */,
 				2BD021591BA42570005CD013 /* CanvasView.h */,
 				2BD0215A1BA42570005CD013 /* CanvasView.m */,
 				2BD021621BA5409D005CD013 /* LineInCanvas.h */,
@@ -241,8 +251,6 @@
 				2BD0215D1BA42599005CD013 /* PaletteView.m */,
 				2BEABD521BC3D921000D2DB6 /* LineInPalette.h */,
 				2BEABD531BC3D921000D2DB6 /* LineInPalette.m */,
-				2BEABD551BC43017000D2DB6 /* Polygon.h */,
-				2BEABD561BC43017000D2DB6 /* Polygon.m */,
 				2BD0215F1BA425CF005CD013 /* PenPickerView.h */,
 				2BD021601BA425CF005CD013 /* PenPickerView.m */,
 				2BD0216A1BB127E8005CD013 /* PenPickerCell.h */,

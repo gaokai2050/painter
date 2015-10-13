@@ -89,7 +89,7 @@
 {
     LineInCanvas *line = [[LineInCanvas alloc] init];
     line.pen = self.pad.pen;
-    line.begin = line.end = point;
+    line.start = line.end = point;
     line.color = self.pad.drawColor;
     line.penAngle = penAngle;
     line.touchDepth = touchDepth;

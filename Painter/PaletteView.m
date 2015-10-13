@@ -40,7 +40,7 @@
         CGPoint point = CGPointFromString(p);
         [framePoints addObject:[NSValue valueWithCGPoint:point]];
     }
-    NSArray *frame = [[NSArray alloc] initWithArray:framePoints];
+    Polygon *frame = [[Polygon alloc] initWithFrame:framePoints];
     
     NSArray *holeList = [palette objectForKey:@"Holes"];
     NSMutableArray *holes = [[NSMutableArray alloc] init];
@@ -50,11 +50,11 @@
             CGPoint point = CGPointFromString(p);
             [hole addObject:[NSValue valueWithCGPoint:point]];
         }
-        [holes addObject:hole];
+        [holes addObject:[[Polygon alloc] initWithFrame:hole]];
     }
     NSArray *hole = [[NSArray alloc] initWithArray:holes];
     
-    _palette = [[Polygon alloc] initWithFrame:frame holes:hole];
+    _palette = [[PolygonWithHoles alloc] initWithFrame:frame holes:hole];
 }
 -(void)dealloc
 {
@@ -78,28 +78,29 @@
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
     //CGContextDrawImage(context, rect, self.backgroundImage);
-    [self drawPolygon:_palette.framePoints inContext:context withColor:_paletteColor];
-    for (NSArray<NSValue*>* hole in _palette.holes) {
+    [self drawPolygon:_palette.frame inContext:context withColor:_paletteColor];
+    for (Polygon* hole in _palette.holes) {
         [self drawPolygon:hole inContext:context withColor:_backgroundColor];
     }
 
+    CGContextBeginTransparencyLayer(context, NULL);
     CGContextSetBlendMode(context, kCGBlendModeMultiply);
     CGContextSetLineCap(context, kCGLineCapRound);
-    
     for (LineInPalette *line in self.linesCompleted) {
         [line drawInContext:context withRect:rect];
     }
+    CGContextEndTransparencyLayer(context);
 }
--(void)drawPolygon:(NSArray<NSValue*>*)polygon inContext:(CGContextRef)context withColor:(UIColor*)color
+-(void)drawPolygon:(Polygon*)polygon inContext:(CGContextRef)context withColor:(UIColor*)color
 {
     CGContextSaveGState(context);
     [color set];
 //    CGContextSetStrokeColorWithColor(context, color.CGColor);
 //    CGContextSetFillColorWithColor(context, color.CGColor);
-    CGPoint p1 = [[polygon objectAtIndex:0] CGPointValue];
+    CGPoint p1 = [polygon pointAtIndex:0];
     CGContextMoveToPoint(context, p1.x, p1.y);
-    for (int i = 0; i < polygon.count; i++) {
-        CGPoint p2 = [[polygon objectAtIndex:((i+1) % polygon.count)] CGPointValue];
+    for (int i = 0; i < polygon.pointCount; i++) {
+        CGPoint p2 = [polygon pointAtIndex:((i+1) % polygon.pointCount)];
         CGContextAddLineToPoint(context, p2.x, p2.y);
         p1 = p2;
     }
@@ -125,11 +126,11 @@
         CGPoint loc = [t locationInView:self];
         if (self.currentLine) {
             self.currentLine.end = loc;
-            NSLog(@"Current Line end in touchesMoved, (%.1f,%.1f)-(%.1f,%.1f)", self.currentLine.begin.x, self.currentLine.begin.y, self.currentLine.end.x, self.currentLine.end.y);
-            NSArray *lineInsideArray = [_palette getLineInside:self.currentLine];
+            NSLog(@"Current Line end in touchesMoved, (%.1f,%.1f)-(%.1f,%.1f)", self.currentLine.start.x, self.currentLine.start.y, self.currentLine.end.x, self.currentLine.end.y);
+            NSArray *lineInsideArray = [_palette getLines:self.currentLine inside:YES];
             NSLog(@"After getLineInside, get %d lines.", lineInsideArray.count);
             for (Line *lineInside in lineInsideArray) {
-                NSLog(@"  ----(%.1f,%.1f)-(%.1f,%.1f)", lineInside.begin.x, lineInside.begin.y, lineInside.end.x, lineInside.end.y);
+                NSLog(@"  ----(%.1f,%.1f)-(%.1f,%.1f)", lineInside.start.x, lineInside.start.y, lineInside.end.x, lineInside.end.y);
                 if (lineInside == self.currentLine) {
                     [self addLine:self.currentLine];
                 } else {
@@ -153,7 +154,7 @@
 -(void)startNewLineAt:(CGPoint)point
 {
     LineInPalette *line = [[LineInPalette alloc] init];
-    line.begin = line.end = point;
+    line.start = line.end = point;
     if (_userPickedColor) {
         line.color = _userPickedColor;
     }

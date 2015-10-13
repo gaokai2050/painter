@@ -15,7 +15,7 @@
 {
     [self.color set];
     CGContextSetLineWidth(context, 15.0);
-    CGContextMoveToPoint(context, self.begin.x, self.begin.y);
+    CGContextMoveToPoint(context, self.start.x, self.start.y);
     CGContextAddLineToPoint(context, self.end.x, self.end.y);
     CGContextStrokePath(context);
 }
